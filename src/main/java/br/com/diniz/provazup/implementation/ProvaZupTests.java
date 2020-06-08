@@ -6,6 +6,7 @@ import br.com.diniz.provazup.pageobjects.SacolaAmericanasPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -41,7 +42,20 @@ public class ProvaZupTests {
 
     @Then("selecionar um produto")
     public void selecionarProduto() {
-        LojasAmericanasPage.itenFirstProduct().click();
+        LojasAmericanasPage.listFirstItem().click();
+//        //TODO: Implement list click
+//        List<WebElement> list = LojasAmericanasPage.productList();
+//        if (list.isEmpty()){
+//            Assert.fail("No Results");
+//        }
+//
+//        //clicar no primeiro
+//        for (WebElement product : list){
+//            if (product.isEnabled()){
+//                product.click();
+//                break;
+//            }
+//        }
     }
 
     @Then("Adicionar ao carrinho")

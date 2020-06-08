@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class LojasAmericanasPage {
 
@@ -23,6 +24,8 @@ public class LojasAmericanasPage {
     private static String classBasketProducts = "basket-products";
     private static String classSelectedProductName = "product-title__TitleUI-sc-116vf1e-3 hCKbLB TitleH1-sc-1wh9e1x-0 kSKgXt";
     private static String idProductName = "product-name-default";
+    private static String classProductGrid = "row product-grid no-gutters main-grid";
+    private static String xpathProductGrid = "//*[@id=\"content-middle\"]/div[6]";
 
     public static void navigate(String url){
         DriverHelper.getDriver().get(url);
@@ -41,7 +44,11 @@ public class LojasAmericanasPage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(classDataSearchQuery)));
     }
 
-    public static WebElement itenFirstProduct(){
+    public static List<WebElement> productList(){
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpathProductGrid)));
+    }
+
+    public static WebElement listFirstItem(){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathProductItem)));
     }
 
