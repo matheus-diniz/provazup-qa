@@ -6,7 +6,6 @@ import br.com.diniz.provazup.pageobjects.SacolaAmericanasPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -43,32 +42,22 @@ public class ProvaZupTests {
     @Then("selecionar um produto")
     public void selecionarProduto() {
         LojasAmericanasPage.listFirstItem().click();
-//        //TODO: Implement list click
-//        List<WebElement> list = LojasAmericanasPage.productList();
-//        if (list.isEmpty()){
-//            Assert.fail("No Results");
-//        }
-//
-//        //clicar no primeiro
-//        for (WebElement product : list){
-//            if (product.isEnabled()){
-//                product.click();
-//                break;
-//            }
-//        }
     }
 
     @Then("Adicionar ao carrinho")
     public void adicionarCcarrinho() {
+        //Pega o title do item selecionado para validar
         selectedItem = LojasAmericanasPage.lbSelectedProductName().getText();
-        LojasAmericanasPage.btnBuy().click();
+        if (LojasAmericanasPage.btnBuy().isEnabled()){
+            LojasAmericanasPage.btnBuy().click();
+        } else LojasAmericanasPage.btnBuyandDelivery().click();
         LojasAmericanasPage.btnContinue().click();
     }
 
     @Then("Validar Carrinho")
     public void validarCarrinho() {
         List<WebElement> list = SacolaAmericanasPage.basketProducts();
-
+        //Valida se o item selecionado encontra-se na sacola
         if (list.contains(selectedItem)){
             Assert.assertTrue("Objeto encontrado", true);
         }

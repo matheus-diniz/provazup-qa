@@ -1,18 +1,20 @@
+  # language: pt
+    #  Definido fazer em pt para ter os fluxos de testes em linguagem mais natural possível
+
 @ProvaZup
+Funcionalidade: ProvaZup
 
-Feature: ProvaZup
+  Cenario: Acessar o site Lojas Americanas
+    Quando acessar o site "https://www.americanas.com.br/"
+    Entao site é exibido
 
-  Scenario: Acessar o site Lojas Americanas
-    When acessar o site "https://www.americanas.com.br/"
-    Then site é exibido
+  Esquema do Cenario: Procurar produto
+    Quando procurar o produto "<produto>"
+    Entao lista é apresentada "<produto>"
+    Entao selecionar um produto
+    Entao Adicionar ao carrinho
+    Entao Validar Carrinho
 
-  Scenario Outline: Procurar produto
-    When procurar o produto "<produto>"
-    Then lista é apresentada "<produto>"
-    Then selecionar um produto
-    Then Adicionar ao carrinho
-    Then Validar Carrinho
-
-    Examples:
+    Cenarios:
     | produto |
     | celular |

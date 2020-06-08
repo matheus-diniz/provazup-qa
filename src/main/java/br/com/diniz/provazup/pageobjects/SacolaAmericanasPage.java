@@ -11,8 +11,6 @@ import java.util.List;
 public class SacolaAmericanasPage {
 
     private static WebDriverWait wait = new WebDriverWait(DriverHelper.getDriver(), 30);
-    private static String classBasketProduct = "basket-products";
-    private static String classBasketProductItems = "list-unstyled basket-items";
     private static String xpathBasketProductItems = "//*[@id=\"app\"]/section/section/div[1]/section/ul";
 
     public static List<WebElement> basketProducts(){
