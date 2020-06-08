@@ -72,8 +72,5 @@ public class ProvaZupTests {
         if (list.contains(selectedItem)){
             Assert.assertTrue("Objeto encontrado", true);
         }
-//        for (WebElement product : list){
-//            System.out.println(product.getText());
-//        }
     }
 }
