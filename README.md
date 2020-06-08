@@ -12,10 +12,11 @@ Para saber =)
   - JUnit Runner para controlar todos os cenários do teste. 
   - Selenium WebDriver
 - Padrões de Projeto:
-      - Singleton - garanti que só fosse aberto um navegador por execução. 
-       - Pageobjects - cada página acessada teve seus elementos mapeados em métodos o que
+  - Singleton - garanti que só fosse aberto um navegador por execução. 
+  - Pageobjects - cada página acessada teve seus elementos mapeados em métodos o que
    torna o código mais "clean" e a implementação dos testes mais
    intuitiva. 
+   - Estrutura do projeto compatível e de fácil entendimento.
 
 **Desafio Zup - automação Web**
 
